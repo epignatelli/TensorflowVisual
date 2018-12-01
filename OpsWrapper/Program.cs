@@ -12,7 +12,7 @@ namespace OpsWrapper
     {
         static void Main(string[] args)
         {
-            string outFolder = @"E:\02. Research\01. GitHub\BuroHappoldEngineering\Tensorflow_Toolkit\Tensorflow_Engine\Wrappers";
+            string outFolder = @"..\..\..\Tensorflow_Engine\AutoGenOps";
             List<MethodInfo> methods = BH.Engine.Tensorflow.Query.TensorflowOps();
             foreach( MethodInfo method in methods)
             {
