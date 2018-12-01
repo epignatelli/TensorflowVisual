@@ -21,7 +21,7 @@ namespace BH.Engine.DeepLearning
             sb.AppendLine("\t{");
 
             // Signature
-            string signature = "\t\tpublic static " + Query.TypeName(method.ReturnType) + " " + method.Name + "(TFGraph graph, ";
+            string signature = "\t\tpublic static " + Query.TypeName(method.ReturnType) + " " + method.Name + "(this TFGraph graph, ";
 
             foreach (ParameterInfo par in method.GetParameters())
             {
