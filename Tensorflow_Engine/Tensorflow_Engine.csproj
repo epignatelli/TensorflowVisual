@@ -881,6 +881,7 @@
     <Compile Include="AutoGenOps\Zeta.cs" />
     <Compile Include="AutoGenOps\ZipDataset.cs" />
     <Compile Include="Compute\WriteMethodFiles.cs" />
+    <Compile Include="Create\TFTensor.cs" />
     <Compile Include="Query\DefaultValueAsString.cs" />
     <Compile Include="Query\OpWrapper.cs" />
     <Compile Include="Create\TFSession.cs" />
