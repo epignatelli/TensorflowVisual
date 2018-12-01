@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tensorflow_Engine", "Tensorflow_Toolkit\Tensorflow_Engine.csproj", "{757E8BF0-798E-4D3D-ABDE-7241B12AB7B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tensorflow_Engine", "Tensorflow_Engine\Tensorflow_Engine.csproj", "{757E8BF0-798E-4D3D-ABDE-7241B12AB7B2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpsWrapper", "OpsWrapper\OpsWrapper.csproj", "{A47FD1AD-B09B-4B6F-BDBA-AF124C212564}"
 EndProject

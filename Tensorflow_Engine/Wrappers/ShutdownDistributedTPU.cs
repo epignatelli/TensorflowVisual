@@ -1,0 +1,13 @@
+using System;
+using TensorFlow;
+
+namespace BH.Engine.Tensorflow
+{
+public static partial class Compute
+	{
+		public static TensorFlow.TFOperation ShutdownDistributedTPU(this TFGraph graph, string operName=null)
+		{
+			return graph.ShutdownDistributedTPU(operName);
+		}
+	}
+}

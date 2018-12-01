@@ -49,5 +49,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tensorflow_Engine\Tensorflow_Engine.csproj">
+      <Project>{757e8bf0-798e-4d3d-abde-7241b12ab7b2}</Project>
+      <Name>Tensorflow_Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tensorflow_oM\Tensorflow_oM.csproj">
+      <Project>{b81a13d8-cc6b-4f79-9537-5a07f53f41c7}</Project>
+      <Name>Tensorflow_oM</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
