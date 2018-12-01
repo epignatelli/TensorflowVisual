@@ -13,6 +13,7 @@ namespace BH.Engine.Tensorflow
             //Usings
             sb.AppendLine("using System;");
             sb.AppendLine("using TensorFlow;");
+            sb.AppendLine("using System.Collections.Generic;");
             sb.AppendLine("");
 
             // Context
@@ -24,13 +25,12 @@ namespace BH.Engine.Tensorflow
             // Signature
             string signature = "\t\tpublic static " + Query.TypeName(method.ReturnType) + " " + method.Name + "(this TFGraph graph, ";
 
-
             foreach (ParameterInfo par in parameters)
             {
                 signature += (Query.TypeName(par.ParameterType) + " " + par.Name);
                 if (par.HasDefaultValue)
                 {
-                    signature += ("=" + (par.DefaultValue == null ? "null" : par.RawDefaultValue)); // `par.DefaultValue ?? null` weirdly does not work
+                    signature += ("=" + par.DefaultValueAsString()); // `par.DefaultValue ?? null` weirdly does not work
                 }
                 signature += (", ");
             }
@@ -46,7 +46,7 @@ namespace BH.Engine.Tensorflow
 
             foreach (ParameterInfo par in parameters)
             {
-                if (par.GetType().Name.Contains("&"))
+                if (par.ParameterType.IsByRef)
                 {
                     corpus += "ref ";
                 }
@@ -60,6 +60,7 @@ namespace BH.Engine.Tensorflow
             corpus += (");");
             sb.AppendLine(corpus);
 
+            // Closing
             sb.AppendLine("\t\t}");
             sb.AppendLine("\t}");
             sb.AppendLine("}");

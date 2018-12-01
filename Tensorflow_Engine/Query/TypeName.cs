@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BH.Engine.Tensorflow
 {
@@ -16,15 +13,11 @@ namespace BH.Engine.Tensorflow
                 return TypeName(nullableType) + "?";
             }
 
-            if (type.Name.EndsWith("&"))
+            if (type.IsByRef)
             {
-                Type byValue = Type.GetType(type.Name.Replace("&", ""));
-                if (byValue != null)
-                {
-                    return "ref " + TypeName(byValue);
-                }
+                return "ref " + type.Name.Replace("&", "");
             }
-            
+
             if (!type.IsGenericType)
             {
                 if (type.IsArray)
