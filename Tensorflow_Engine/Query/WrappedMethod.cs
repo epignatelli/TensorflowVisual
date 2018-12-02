@@ -5,7 +5,7 @@ namespace BH.Engine.Tensorflow
 {
     public static partial class Convert
     {
-        public static string OpWrapper(this MethodInfo method)
+        public static string WrappedOp(this MethodInfo method)
         {
             ParameterInfo[] parameters = method.GetParameters();
             StringBuilder sb = new StringBuilder();
@@ -63,6 +63,53 @@ namespace BH.Engine.Tensorflow
             // Closing
             sb.AppendLine("\t\t}");
             sb.AppendLine("\t}");
+            sb.AppendLine("}");
+
+            return sb.ToString();
+        }
+
+        public static string WrappedTensorConstructor(this ConstructorInfo ctor)
+        {
+            ParameterInfo[] parameters = ctor.GetParameters();
+            StringBuilder sb = new StringBuilder();
+
+            // Signature
+            string signature = "public static TFTensor TFTensor(";
+            foreach (ParameterInfo par in parameters)
+            {
+                signature += (Query.TypeName(par.ParameterType) + " " + par.Name);
+                if (par.HasDefaultValue)
+                {
+                    signature += ("=" + par.DefaultValueAsString()); // `par.DefaultValue ?? null` weirdly does not work
+                }
+                signature += (", ");
+            }
+
+            signature = signature.Substring(0, signature.Length - 2);
+            signature += (")");
+            sb.AppendLine(signature);
+
+            sb.AppendLine("{");
+
+            // Corpus
+            string corpus = "\treturn new TFTensor(";
+            foreach (ParameterInfo par in parameters)
+            {
+                if (par.ParameterType.IsByRef)
+                {
+                    corpus += "ref ";
+                }
+                corpus += (par.Name + ", ");
+            }
+
+            if (parameters.Length > 0)
+            {
+                corpus = corpus.Substring(0, corpus.Length - 2);
+            }
+            corpus += (");");
+            sb.AppendLine(corpus);
+
+            // Closing
             sb.AppendLine("}");
 
             return sb.ToString();
