@@ -890,7 +890,7 @@
     <Compile Include="Create\TFGraph.cs" />
     <Compile Include="Create\TFShape.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Query\TensorflowOps.cs" />
+    <Compile Include="Query\TensorflowMethods.cs" />
     <Compile Include="Query\Value.cs" />
     <Compile Include="Query\TypeName.cs" />
   </ItemGroup>

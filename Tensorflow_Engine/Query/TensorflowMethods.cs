@@ -13,5 +13,10 @@ namespace BH.Engine.Tensorflow
         {
             return typeof(TensorFlow.TFGraph).GetMethods().ToList();
         }
+
+        public static List<ConstructorInfo> TensorConstructors()
+        {
+            return typeof(TensorFlow.TFTensor).GetConstructors().ToList();
+        }
     }
 }
