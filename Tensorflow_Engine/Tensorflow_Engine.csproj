@@ -883,7 +883,7 @@
     <Compile Include="AutoGenOps\ZipDataset.cs" />
     <Compile Include="Compute\Run.cs" />
     <Compile Include="Compute\WriteMethodFiles.cs" />
-    <Compile Include="Create\TFTensor.cs" />
+    <Compile Include="Create\TFTensor.ag.cs" />
     <Compile Include="Query\DefaultValueAsString.cs" />
     <Compile Include="Query\WrappedMethod.cs" />
     <Compile Include="Create\TFSession.cs" />
