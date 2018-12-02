@@ -16,7 +16,7 @@ namespace BH.Engine.Tensorflow
                 return false;
             }
 
-            string methodString = method.OpWrapper();
+            string methodString = method.WrappedOp();
             try
             {
                 string path = Path.Combine(outFolder, method.Name + ".cs");
