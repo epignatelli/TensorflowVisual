@@ -1,5 +1,5 @@
 # Hi, I am TensorflowVisual
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/epignatelli/Tensorflow_Toolkit/edit/master/LICENCE)
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
 Tensorflow_Toolkit is an open source software library written in C# that exposes **[tensorflow](https://github.com/tensorflow/tensorflow)**
 to visual programming interfaces like [Grasshopper](https://www.grasshopper3d.com/)
